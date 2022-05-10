@@ -1,32 +1,39 @@
 ///////////////Menu Items (MVP)///////////////////
 
-const burger = { name: "Burger", price: 18, category: "Lunch", discount: function(string){
-  discountPrice = 18
-  discountAmount = discountPrice
-  if (string === "teacher" || "student") {
-  discountAmount * 0.25
-  }
-  if (string === "public") {
-   discountAmount * 0.10
-  }
-  return discountPrice - discountAmount
-}};
-console.log(burger.discount("public"))
+const burger = {
+  name: "Burger",
+  price: 18,
+  category: "Lunch",
+  discount: function (string) {
+    let discountedPrice;
+    if (string === "teacher" || "student") {
+      discountedPrice = burger.price * 0.25;
+    }
+    if (string === "public") {
+      discountedPrice = burger.price * 0.1;
+    }
+    return burger.price - discountedPrice;
+  },
+};
+console.log(burger.discount("public"));
 
 const latte = { name: "Cafe Latte", price: 4, category: "Drinks" };
-const breakfastBurrito = { name: "Breakfast Burrito", price: 16, category: "Breakfast" };
+const breakfastBurrito = {
+  name: "Breakfast Burrito",
+  price: 16,
+  category: "Breakfast",
+};
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-
 function createMenuItem(name, cost, category) {
   /* Code here */
-  const item={name:name, cost:cost, category:category}
-  return item
+  const item = { name: name, cost: cost, category: category };
+  return item;
 }
-console.log(createMenuItem("Cafe Soda", 1.99, "Drinks"))
-console.log(createMenuItem("Water", .99, "Drinks"))
-console.log(createMenuItem("Salad", 1.99, "Food"))
+console.log(createMenuItem("Cafe Soda", 1.99, "Drinks"));
+console.log(createMenuItem("Water", 0.99, "Drinks"));
+console.log(createMenuItem("Salad", 1.99, "Food"));
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
 
@@ -78,14 +85,27 @@ const reviews = [
   { name: "Reyna", rating: 3.5, feedback: "" },
 ];
 /* Task 3: Console.log just Julius' feedback */
-let Julius = Object.values(reviews[5])
-console.log(Julius[2])
+let Julius = Object.values(reviews[5]);
+console.log(Julius[2]);
+for (let i = 0; i < reviews.length; i++) {
+  if (reviews[i].name === "Julius") {
+    console.log(reviews[i].feedback);
+  }
+}
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
-reviews.push({"name":"Vanitas", "rating":"1.5", "feedback":"Took extraordinarily long for a simple dish, food was mediocre to say the least."}) 
-console.log(reviews)
+reviews.push({
+  name: "Vanitas",
+  rating: "1.5",
+  feedback:
+    "Took extraordinarily long for a simple dish, food was mediocre to say the least.",
+});
+console.log(reviews);
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
-let Lauren = Object.values(reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays");
+let Lauren = Object.values(
+  (reviews[7].feedback =
+    "this place is chill with really cool people, great for getting work done on weekdays")
+);
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
  Your function should take two arguments:
@@ -97,11 +117,9 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
 function getReviewByIndex(reviews, index) {
-  const review = reviews[index]
-  const name = review.name
-  const rating = review.rating
-  const feedback = review.feedback
-  return `${name} gave the restaurant a ${rating} star review and their feedback was: ${feedback}`
+  const review = reviews[index];
+  const { name, rating, feedback } = review;
+  return `${name} gave the restaurant a ${rating} star review and their feedback was: ${feedback}`;
 }
 console.log(getReviewByIndex(reviews, 4));
 /* Exercise 12
@@ -118,15 +136,17 @@ const userObject = {
   lastName: "Oriflamme",
   currentLocation: "DownTown CC",
   favoriteSongs: "Just Disappear, You Got Jokes, chinatown!, Let Me Know",
-  age: 25
-}
+  age: 25,
+};
 /*
 1. console log 'hello user's firstname and Lastname'
 2.How's the weather in 'currentLocation'
 3. console log user's favorite songs
 */
-console.log(`hello user ${userObject.firstName} ${userObject.lastName}. How's the weather in ${userObject.currentLocation}?`)
-console.log(userObject.favoriteSongs)
+console.log(
+  `hello user ${userObject.firstName} ${userObject.lastName}. How's the weather in ${userObject.currentLocation}?`
+);
+console.log(userObject.favoriteSongs);
 /* STRETCH 3:  This challenge is not related to the data above! 
 Write a function called carMarker 
 Your function should accept:
@@ -139,19 +159,14 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
-function carMaker(num) {
-  let odometer = num
-  let drive 
-
-  return
+function carMaker(odometer) {
+  const object = {
+    odometer: odometer,
+    drive: function (distance) {
+      return (object.odometer = object.odometer + distance);
+    },
+  };
 }
-console.log(carMaker(15))
-/*
-  To get started:
-  1. Remove the lines involving the removeThisToStart variable, so that the
-     program doesn't exit early.
-  2. Implement userCanAffordSofa
-*/                                // ????????
 
 // Exercise 13
 
@@ -204,14 +219,14 @@ function move() {
 // Print out the relevant information about each animal.
 // return `${name} is a ${species}. They are ${age} years old and ${mass} kilograms. Their ID is ${astronautID}.`;
 function crewReports(animal) {
-  let name = animal.name
-  let species = animal.species
-  let age = animal.age
-  let mass = animal.mass
-  let astronautID = animal.astronautID
-  return `${name} is a ${species}. They are ${age} years old and ${mass} kilograms. Their ID is ${astronautID}.`
+  let name = animal.name;
+  let species = animal.species;
+  let age = animal.age;
+  let mass = animal.mass;
+  let astronautID = animal.astronautID;
+  return `${name} is a ${species}. They are ${age} years old and ${mass} kilograms. Their ID is ${astronautID}.`;
 }
-console.log(crewReports(superChimpOne))
+console.log(crewReports(superChimpOne));
 
 // Exercise 14
 
@@ -222,22 +237,8 @@ var movieDatabase = {
 };
 // write the function to return Movie name and duration and start
 function movieData(movie) {
-  let name = movie.title
-  let duration = movie.duration
-  let stars = movie.stars
-// ?
-  return name 
+  const { title, duration, stars } = movie;
+  // ?
+  return title + duration + stars;
 }
-console.log(movieData(movieDatabase))
-
-// const user={
-//   Name: "Chingun",
-//   Age: 14,
-//   Location: "America",
-//   Nationality: "Mongolia",
-// }
-// user.married = false
-// user.age = 15
-// delete user["Nationality"]
-
-// console.log(user)
+console.log(movieData(movieDatabase));
