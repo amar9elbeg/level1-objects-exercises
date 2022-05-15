@@ -1,28 +1,59 @@
 ///////////////Menu Items (MVP)///////////////////
 
 const latte = { name: "Cafe Latte", price: 4, category: "Drinks" };
-const burger = { name: "Burger", price: 18, category: "Lunch" };
+const burger = {
+  name: "Burger",
+  price: 18,
+  category: "Lunch",
+  discount: function (string) {
+    if (string === "teacher" || string === "student") {
+      return burger.price - burger.price * 0.25;
+    } else {
+      return burger.price - burger.price * 0.1;
+    }
+  },
+};
 const breakfastBurrito = {
   name: "Breakfast Burrito",
   price: 16,
   category: "Breakfast",
 };
 
-/* Task 1a: write a function to return more menu items with the same format as the items above. */
+/* Task 1a: write a function to return more menu items 
+with the same format as the items above. */
 
 function createMenuItem(name, cost, category) {
   /* Code here */
+  const item = {
+    name: name,
+    cost: cost,
+    category: category,
+  };
+  return item;
 }
 
-/* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
+console.log(createMenuItem("backpack", 30, "bag"));
 
-/* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
+/* Task 1b: use your function to 
+create 3 more menu items. You may 
+add any items to the menu that you'd like */
+console.log(createMenuItem("steak", 15, "dinner"));
+console.log(createMenuItem("Yogurt", 4, "desert"));
+console.log(createMenuItem("chicken", 2, "dinner"));
+/* Task 2: You're having a lunch special! 25% off for teachers and students, 
+10% off for everyone else. Add a method to your burger object that automatically 
+calculates price given a string as a parameter. 
 Your method should accept: 
 (1) A string (teacher, student, or public)
+console.log(burger.price)
+
+
 and should return a number. 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
 ///////////////Reviews (MVP)///////////////////
+
+console.log(burger.discount("student"));
 
 const reviews = [
   {
@@ -65,18 +96,40 @@ const reviews = [
 ];
 
 /* Task 3: Console.log just Julius' feedback */
+console.log(reviews[4].feedback);
 
-/* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+/* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the
+ same format as the reviews above. */
+const newReview = {
+  name: "tyler",
+  rating: 3,
+  feedback: "Im hungry",
+};
+reviews.push(newReview);
+console.log(reviews);
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+//  Task 5: Add the following
+//  feedback to Reyna's rating - "this place is chill
+//   with really cool people, great for getting work done on weekdays"
+const reyna = reviews[7];
+reyna.feedback = "this place is chill  with really cool people, great for getting work done on weekdays"
+console.log(reviews);
+
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
- Your function should take two arguments:
+ Your function should take
+  two arguments:
 (1) an array which holds all of the reviews
-(2) a number which is the desired index in the array.
-and should return a string in the format `{name} gave the restaurant a {rating}, and their feedback was: {feedback}`
+(2) a number which is the 
+desired index in the array.
+and should return a string
+ in the format `{name} gave the
+  restaurant a {rating}, and their feedback was: {feedback}`
  * 
- * For example, if getReviewByIndex is invoked with reviews and the number 0
- * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
+ * For example, if getReviewByIndex
+ *  is invoked with reviews and the number 0
+ * it will return `Daniela gave the 
+ * restaurant a 5 star review and their
+ *  feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
 function getReviewByIndex(reviews, index) {
   /* code here */
