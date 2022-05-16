@@ -130,9 +130,14 @@ and should return a string
  * it will return `Daniela gave the 
  * restaurant a 5 star review and their
  *  feedback was: Beautiful atmosphere and wonderful vegan options!`
+ *
 */
 function getReviewByIndex(reviews, index) {
   /* code here */
+  if (getReviewByIndex(0,reviews)){
+
+
+  }
 }
 
 /* Exercise 12
@@ -231,3 +236,8 @@ var movieDatabase = {
   stars: ["Bruce Willis", "Uma Thurman"],
 };
 // write the function to return Movie name and duration and start
+function movieDatabase(movies, title) {
+  for (let m of movies)
+      if (m.title === title)
+          return m;
+};
