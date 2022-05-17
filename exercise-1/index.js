@@ -112,7 +112,8 @@ console.log(reviews);
 //  feedback to Reyna's rating - "this place is chill
 //   with really cool people, great for getting work done on weekdays"
 const reyna = reviews[7];
-reyna.feedback = "this place is chill  with really cool people, great for getting work done on weekdays"
+reyna.feedback =
+  "this place is chill  with really cool people, great for getting work done on weekdays";
 console.log(reviews);
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
@@ -133,20 +134,36 @@ and should return a string
 */
 function getReviewByIndex(reviews, index) {
   /* code here */
+  const object = reviews[index];
+  return `${object.name} gave the restaurant a ${object.rating} star raiting and their 
+  feedback was 
+  ${object.feedback}`;
 }
+console.log(getReviewByIndex(reviews, 5));
 
-/* Exercise 12
+//  Exercise 12
 
-Create the use object and the object should have following key 
-firstName
-lastName
-currentLocation
-favoriteSongs
-age
+// Create the user object and the object should have following key
+// firstName
+// lastName
+// currentLocation
+// favoriteSongs
+// age
+// ??
+// 1. console log 'hello user's firstname and Lastname'
+// 2.How's the weather in 'currentLocation'
+// 3. console log user's favorite songs
 
-1. console log 'hello user's firstname and Lastname'
-2.How's the weather in 'currentLocation'
-3. console log user's favorite songs
+const user = {
+  firstName: "tyler",
+  lastName: "qijfoij",
+  currentLocation: "seattle",
+  favorateSongs: 908488,
+  age: 84,
+};
+console.log(`hello ${user.firstName} ${user.lastName}`);
+console.log(`How's the weather in ${user.currentLocation}`);
+console.log(`${user.firstName}'s favorite song is ${user.favorateSongs}`);
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 Write a function called carMarker 
@@ -160,9 +177,18 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
-function carMaker(/* code here */) {
+function carMaker(number) {
   /* code here */
+  const num = {
+    odometer: number,
+    drive: function (distance) {
+      num.odometer = num.odometer + distance;
+    },
+  };
+  num.drive(2);
+  return num.odometer;
 }
+console.log(carMaker(2));
 
 /*
   To get started:
@@ -230,4 +256,16 @@ var movieDatabase = {
   duration: 120,
   stars: ["Bruce Willis", "Uma Thurman"],
 };
-// write the function to return Movie name and duration and start
+const test = {
+  title: "test",
+  duration: 120,
+  stars: ["Bruce Willis", "Uma Thurman"],
+};
+// write the function to return Movie name and duration and stars
+function movie(object) {
+  return `the movie name is ${object.title} 
+  the duration is ${object.duration}. `;
+}
+// console.log(movie(movieDatabase));
+console.log(movie(test));
+console.log(movie(movieDatabase))
