@@ -1,6 +1,9 @@
 ///////////////Menu Items (MVP)///////////////////
-
+//const the variable latte then that equals curly braclet name: cafe latte price is 4 category is drinks curly braclet
 const latte = { name: "Cafe Latte", price: 4, category: "Drinks" };
+//const burger equals curly bracket, name is burger, price 18 category is lunch, after that put discount: function takes string
+// curly braclet if string equals teacher or string equals student return burger price minus burger price times 0.25
+//else return burger price minus burger price times 0.1
 const burger = {
   name: "Burger",
   price: 18,
@@ -13,6 +16,7 @@ const burger = {
     }
   },
 };
+//const breakfast burrito equals curly bracket name: breakfast burrito price 16 category breakfast
 const breakfastBurrito = {
   name: "Breakfast Burrito",
   price: 16,
@@ -21,7 +25,9 @@ const breakfastBurrito = {
 
 /* Task 1a: write a function to return more menu items 
 with the same format as the items above. */
-
+//function creat menu item takes name cost category curly bracket, const item equals curly bracket name: name
+//cost: cost do the same thing for category then return item, also out of the function console log
+// create menu item backpack, 30, bag
 function createMenuItem(name, cost, category) {
   /* Code here */
   const item = {
@@ -37,6 +43,8 @@ console.log(createMenuItem("backpack", 30, "bag"));
 /* Task 1b: use your function to 
 create 3 more menu items. You may 
 add any items to the menu that you'd like */
+
+// just do the console log but different items from the one above. make sure to do 3 of them
 console.log(createMenuItem("steak", 15, "dinner"));
 console.log(createMenuItem("Yogurt", 4, "desert"));
 console.log(createMenuItem("chicken", 2, "dinner"));
@@ -46,13 +54,11 @@ calculates price given a string as a parameter.
 Your method should accept: 
 (1) A string (teacher, student, or public)
 console.log(burger.price)
-
-
 and should return a number. 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
 ///////////////Reviews (MVP)///////////////////
-
+//console log burger discount student
 console.log(burger.discount("student"));
 
 const reviews = [
@@ -96,10 +102,13 @@ const reviews = [
 ];
 
 /* Task 3: Console.log just Julius' feedback */
+// console log reviews square bracket 4 dot feedback
 console.log(reviews[4].feedback);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the
  same format as the reviews above. */
+ // const new review equals curly bracket name tyler rating any number you want, feedback anything
+ //out of the const do reviews.push new review then console log reviews
 const newReview = {
   name: "tyler",
   rating: 3,
@@ -111,6 +120,8 @@ console.log(reviews);
 //  Task 5: Add the following
 //  feedback to Reyna's rating - "this place is chill
 //   with really cool people, great for getting work done on weekdays"
+// const reyna equals reviews square bracket 7 then reyna dot feedback equals "this place is chill  with really cool people, great for getting work done on weekdays"
+// then console log reviews
 const reyna = reviews[7];
 reyna.feedback =
   "this place is chill  with really cool people, great for getting work done on weekdays";
@@ -132,6 +143,12 @@ and should return a string
  * restaurant a 5 star review and their
  *  feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
+//function name getReviewByIndex, function takes reviews and index
+//const object equals reviews square bracket index
+// return the ${} inside of that put object.name "gave the restaurant a ${} (inside of that put object. rating) star 
+//rating and their
+ //feedback was ${} put object.feedback inside of there"
+ // then out of function console log getReviewByIndex and in parenthises reviews, 5
 function getReviewByIndex(reviews, index) {
   /* code here */
   const object = reviews[index];
@@ -176,7 +193,11 @@ The returned object should have the following characteristics:
          (1) causes the odometer in the object to be increased by the distance,
          (2) returns the updated value of the `odometer`.
 */
-
+// inside the carMaker, takes number
+// const num equals curly bracket, odometer : number, drive : function takes distance, inside the function 
+//num dot odometere equals num.odometer plus distance
+//outside drive function, num.drive parenthesi 2 
+// then return num.odometer, outside all function console log carmaker (2)
 function carMaker(number) {
   /* code here */
   const num = {
@@ -256,12 +277,19 @@ var movieDatabase = {
   duration: 120,
   stars: ["Bruce Willis", "Uma Thurman"],
 };
+// const test equals curly bracket 
+//title test
+// duration 120
+// stars [Bruce WIllis, Uma thurman]
 const test = {
   title: "test",
   duration: 120,
   stars: ["Bruce Willis", "Uma Thurman"],
 };
 // write the function to return Movie name and duration and stars
+//make function name movie, function takes object
+// return movie name is ${}object.title "the duration is ${"object.duration
+//then outside function console log movie(test) and console log movie(movieDatabase)
 function movie(object) {
   return `the movie name is ${object.title} 
   the duration is ${object.duration}. `;
