@@ -1,9 +1,9 @@
 ///////////////Menu Items (MVP)///////////////////
-//const the variable latte then that equals curly braclet name: cafe latte price is 4 category is drinks curly braclet
+//const the variable latte then name: cafe latte price is 4 category is drinks
 const latte = { name: "Cafe Latte", price: 4, category: "Drinks" };
-//const burger equals curly bracket, name is burger, price 18 category is lunch, after that put discount: function takes string
-// curly braclet if string equals teacher or string equals student return burger price minus burger price times 0.25
-//else return burger price minus burger price times 0.1
+//const burger equals name is burger, price 18 category is lunch, after that put discount: function takes string
+// if the  string equals teacher or string equals student return burger price minus burger price times 0.25
+//else return burger price minus burger price multiplied by  0.1
 const burger = {
   name: "Burger",
   price: 18,
@@ -16,7 +16,7 @@ const burger = {
     }
   },
 };
-//const breakfast burrito equals curly bracket name: breakfast burrito price 16 category breakfast
+//const breakfast burrito equals name is gonna be  breakfast burrito price 16 category is breakfast
 const breakfastBurrito = {
   name: "Breakfast Burrito",
   price: 16,
@@ -25,9 +25,9 @@ const breakfastBurrito = {
 
 /* Task 1a: write a function to return more menu items 
 with the same format as the items above. */
-//function creat menu item takes name cost category curly bracket, const item equals curly bracket name: name
+//function creat menu item takes name cost , const item that equals  name: name
 //cost: cost do the same thing for category then return item, also out of the function console log
-// create menu item backpack, 30, bag
+// create menu item backpack, 30, bag something like that you can do anything
 function createMenuItem(name, cost, category) {
   /* Code here */
   const item = {
@@ -45,9 +45,10 @@ create 3 more menu items. You may
 add any items to the menu that you'd like */
 
 // just do the console log but different items from the one above. make sure to do 3 of them
-console.log(createMenuItem("steak", 15, "dinner"));
-console.log(createMenuItem("Yogurt", 4, "desert"));
-console.log(createMenuItem("chicken", 2, "dinner"));
+console.log(createMenuItem("pizza", 10, "food"));
+console.log(createMenuItem("water", 1, "drink"));
+console.log(createMenuItem("laptop", 2000, "item"));
+
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 
 10% off for everyone else. Add a method to your burger object that automatically 
 calculates price given a string as a parameter. 
@@ -58,7 +59,7 @@ and should return a number.
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
 ///////////////Reviews (MVP)///////////////////
-//console log burger discount student
+//console log the  burger discount then student
 console.log(burger.discount("student"));
 
 const reviews = [
@@ -102,17 +103,17 @@ const reviews = [
 ];
 
 /* Task 3: Console.log just Julius' feedback */
-// console log reviews square bracket 4 dot feedback
+// console log the  reviews index number is 4 then add feedback
 console.log(reviews[4].feedback);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the
  same format as the reviews above. */
- // const new review equals curly bracket name tyler rating any number you want, feedback anything
- //out of the const do reviews.push new review then console log reviews
+// const new review (this is object) name tyler rating any number you want, feedback anything
+//out of the const do reviews.push new review then console log reviews
 const newReview = {
   name: "tyler",
-  rating: 3,
-  feedback: "Im hungry",
+  raiting: 5,
+  feedback: "very good food",
 };
 reviews.push(newReview);
 console.log(reviews);
@@ -123,10 +124,8 @@ console.log(reviews);
 // const reyna equals reviews square bracket 7 then reyna dot feedback equals "this place is chill  with really cool people, great for getting work done on weekdays"
 // then console log reviews
 const reyna = reviews[7];
-reyna.feedback =
-  "this place is chill  with really cool people, great for getting work done on weekdays";
-console.log(reviews);
-
+reyna.feedback = "this place is chill  with really cool people, great for getting work done on weekdays"
+console.log(reviews)
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
  Your function should take
   two arguments:
@@ -144,17 +143,18 @@ and should return a string
  *  feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
 //function name getReviewByIndex, function takes reviews and index
-//const object equals reviews square bracket index
-// return the ${} inside of that put object.name "gave the restaurant a ${} (inside of that put object. rating) star 
+//const object equals  reviews index
+// return the ${} inside of that put object.name "gave the restaurant a ${} (inside of that put object. rating) star
 //rating and their
- //feedback was ${} put object.feedback inside of there"
- // then out of function console log getReviewByIndex and in parenthises reviews, 5
+//feedback was ${} put object.feedback inside of there"
+// then out of function console log getReviewByIndex and in parenthises reviews, 5
 function getReviewByIndex(reviews, index) {
   /* code here */
   const object = reviews[index];
-  return `${object.name} gave the restaurant a ${object.rating} star raiting and their 
-  feedback was 
-  ${object.feedback}`;
+  {
+    return `${object.name} gave the restaurant a ${object.raiting} star raiting and their
+    feedback was ${object.feedback}`;
+  }
 }
 console.log(getReviewByIndex(reviews, 5));
 
@@ -170,17 +170,16 @@ console.log(getReviewByIndex(reviews, 5));
 // 1. console log 'hello user's firstname and Lastname'
 // 2.How's the weather in 'currentLocation'
 // 3. console log user's favorite songs
-
 const user = {
   firstName: "tyler",
-  lastName: "qijfoij",
+  lastName: "zpzpzpzpz",
   currentLocation: "seattle",
-  favorateSongs: 908488,
-  age: 84,
-};
-console.log(`hello ${user.firstName} ${user.lastName}`);
-console.log(`How's the weather in ${user.currentLocation}`);
-console.log(`${user.firstName}'s favorite song is ${user.favorateSongs}`);
+  favoriteSongs:"ghghghghghghggh",
+  age: 275,
+}
+console.log(`hello ${user.firstName} ${user.lastName}`)
+console.log(`How's the weather in ${user.currentLocation}`)
+console.log(`${user.firstName}'s favorite song is ${user.favoriteSongs}`) 
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 Write a function called carMarker 
@@ -194,20 +193,19 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 // inside the carMaker, takes number
-// const num equals curly bracket, odometer : number, drive : function takes distance, inside the function 
+// const num equals curly bracket, odometer : number, drive : function takes distance, inside the function
 //num dot odometere equals num.odometer plus distance
-//outside drive function, num.drive parenthesi 2 
+//outside drive function, num.drive parenthesi 2
 // then return num.odometer, outside all function console log carmaker (2)
 function carMaker(number) {
   /* code here */
   const num = {
     odometer: number,
     drive: function (distance) {
-      num.odometer = num.odometer + distance;
+      num.odometer === num.drive(2);
+      return num.odometer;
     },
   };
-  num.drive(2);
-  return num.odometer;
 }
 console.log(carMaker(2));
 
@@ -277,10 +275,10 @@ var movieDatabase = {
   duration: 120,
   stars: ["Bruce Willis", "Uma Thurman"],
 };
-// const test equals curly bracket 
-//title test
-// duration 120
-// stars [Bruce WIllis, Uma thurman]
+// const test equals
+//title is gonna be test
+// duration is 120
+// stars are Bruce WIllis, Uma thurman
 const test = {
   title: "test",
   duration: 120,
@@ -288,12 +286,12 @@ const test = {
 };
 // write the function to return Movie name and duration and stars
 //make function name movie, function takes object
-// return movie name is ${}object.title "the duration is ${"object.duration
-//then outside function console log movie(test) and console log movie(movieDatabase)
+// return movie the  name is object.title "the duration is object.duration
+//then outside function console log movie(test) and console log moviemovieDatabase
 function movie(object) {
-  return `the movie name is ${object.title} 
-  the duration is ${object.duration}. `;
+  return `the movie name is ${object.title} the movie is ${object.duration} minutes long, the stars are Bruce Willius and Uma Thurman. `;
 }
-// console.log(movie(movieDatabase));
 console.log(movie(test));
-console.log(movie(movieDatabase))
+console.log(movie(movieDatabase));
+
+// console.log(movie(movieDatabase));
